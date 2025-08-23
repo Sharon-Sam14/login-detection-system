@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alert Details - LIDS</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Login Alert Details</h1>
+        <a href="admin.html">← Back to Dashboard</a>
+    </div>
+
+    <div class="container">
+        <div class="grid-container">
+            <div class="main-content">
+                <div class="card risk-analysis">
+                    <h2>Risk Analysis (Score: 92%)</h2>
+                    <ul>
+                        <li>Anomalous Location: Login from Kyiv, UA is not typical for this user.</li>
+                        <li>Impossible Travel: User's last login was 10 minutes prior from Pune, IN.</li>
+                        <li>IP Type: IP address belongs to a known datacenter/VPN provider.</li>
+                        <li>Unusual Time: Login occurred outside of the user's normal work hours.</li>
+                    </ul>
+                </div>
+
+                <div class="card event-details">
+                    <h2>Event Details</h2>
+                    <div class="detail-item"><span class="label">Username</span> <span class="value">rohan_s</span></div>
+                    <div class="detail-item"><span class="label">Timestamp</span> <span class="value">22-Aug-2025 16:44:50 IST</span></div>
+                    <div class="detail-item"><span class="label">Outcome</span> <span class="value" style="color: #dc3545; font-weight:700;">BLOCKED</span></div>
+                    <div class="detail-item"><span class="label">IP Address</span> <span class="value">203.0.113.19</span></div>
+                    <div class="detail-item"><span class="label">ISP / Host</span> <span class="value">SecureVPN Hosting Ltd.</span></div>
+                    <div class="detail-item"><span class="label">Browser</span> <span class="value">Firefox 128.0</span></div>
+                    <div class="detail-item"><span class="label">Operating System</span> <span class="value">Windows 11</span></div>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <div class="card">
+                    <h2>Login Location</h2>
+                    <div class="map-placeholder">
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

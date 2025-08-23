@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - LIDS</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="header">
+        <h1>Admin Dashboard</h1>
+        <a href="login.html">Logout</a>
+    </div>
+
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>Total Logins (Today)</h3>
+                <p class="value">1,428</p>
+            </div>
+            <div class="stat-card">
+                <h3>High-Risk Alerts</h3>
+                <p class="value alerts">17</p>
+            </div>
+            <div class="stat-card">
+                <h3>Safe Logins</h3>
+                <p class="value safe">1,411</p>
+            </div>
+            <div class="stat-card">
+                <h3>Model Accuracy</h3>
+                <p class="value">99.8%</p>
+            </div>
+        </div>
+
+        <h2>Recent Login Attempts</h2>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Timestamp</th>
+                        <th>Username</th>
+                        <th>IP Address</th>
+                        <th>Location</th>
+                        <th>Risk Score</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>22-Aug-2025 16:45:12</td>
+                        <td>admin_user</td>
+                        <td>103.22.45.10</td>
+                        <td>Mumbai, IN</td>
+                        <td><div class="risk-bar"><div class="risk-level" style="width: 5%; background-color: #28a745;">5%</div></div></td>
+                        <td><span class="status allowed">Allowed</span></td>
+                    </tr>
+                    <tr>
+                        <td>22-Aug-2025 16:44:50</td>
+                        <td>rohan_s</td>
+                        <td>203.0.113.19</td>
+                        <td>Kyiv, UA</td>
+                        <td><div class="risk-bar"><div class="risk-level" style="width: 92%; background-color: #dc3545;">92%</div></div></td>
+                        <td><span class="status blocked">Blocked</span></td>
+                    </tr>
+                    <tr>
+                        <td>22-Aug-2025 16:43:05</td>
+                        <td>priya_k</td>
+                        <td>198.51.100.4</td>
+                        <td>Pune, IN</td>
+                        <td><div class="risk-bar"><div class="risk-level" style="width: 65%; background-color: #ffc107;">65%</div></div></td>
+                        <td><span class="status review">Review</span></td>
+                    </tr>
+                    <tr>
+                        <td>22-Aug-2025 16:42:18</td>
+                        <td>test_user1</td>
+                        <td>122.161.90.55</td>
+                        <td>Delhi, IN</td>
+                        <td><div class="risk-bar"><div class="risk-level" style="width: 12%; background-color: #28a745;">12%</div></div></td>
+                        <td><span class="status allowed">Allowed</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>
+
