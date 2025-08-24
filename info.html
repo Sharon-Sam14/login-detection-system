@@ -3,48 +3,182 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alert Details - LIDS</title>
+    <title>Information - SecureWatch</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="header">
-        <h1>Login Alert Details</h1>
-        <a href="admin.html">← Back to Dashboard</a>
-    </div>
 
-    <div class="container">
-        <div class="grid-container">
-            <div class="main-content">
-                <div class="card risk-analysis">
-                    <h2>Risk Analysis (Score: 92%)</h2>
-                    <ul>
-                        <li>Anomalous Location: Login from Kyiv, UA is not typical for this user.</li>
-                        <li>Impossible Travel: User's last login was 10 minutes prior from Pune, IN.</li>
-                        <li>IP Type: IP address belongs to a known datacenter/VPN provider.</li>
-                        <li>Unusual Time: Login occurred outside of the user's normal work hours.</li>
-                    </ul>
-                </div>
-
-                <div class="card event-details">
-                    <h2>Event Details</h2>
-                    <div class="detail-item"><span class="label">Username</span> <span class="value">rohan_s</span></div>
-                    <div class="detail-item"><span class="label">Timestamp</span> <span class="value">22-Aug-2025 16:44:50 IST</span></div>
-                    <div class="detail-item"><span class="label">Outcome</span> <span class="value" style="color: #dc3545; font-weight:700;">BLOCKED</span></div>
-                    <div class="detail-item"><span class="label">IP Address</span> <span class="value">203.0.113.19</span></div>
-                    <div class="detail-item"><span class="label">ISP / Host</span> <span class="value">SecureVPN Hosting Ltd.</span></div>
-                    <div class="detail-item"><span class="label">Browser</span> <span class="value">Firefox 128.0</span></div>
-                    <div class="detail-item"><span class="label">Operating System</span> <span class="value">Windows 11</span></div>
-                </div>
-            </div>
-
-            <div class="sidebar">
-                <div class="card">
-                    <h2>Login Location</h2>
-                    <div class="map-placeholder">
-                        </div>
-                </div>
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="about.html" class="logo">
+                    <i data-lucide="shield-check"></i>
+                    <span>SecureWatch</span>
+                </a>
+                <nav class="main-nav">
+                    <a href="about.html">About</a>
+                    <a href="index.html">Login</a>
+                    <a href="admin.html">Dashboard</a>
+                    <a href="info.html" class="active">Info</a>
+                </nav>
             </div>
         </div>
-    </div>
+    </header>
+
+    <main>
+        <div class="container info-page">
+            <h1 class="section-title">System Documentation</h1>
+            <div class="tabs">
+                <button class="tab-link active" data-tab="overview">Overview</button>
+                <button class="tab-link" data-tab="dashboard-guide">Dashboard Guide</button>
+                <button class="tab-link" data-tab="risk-scoring">Risk Scoring</button>
+                <button class="tab-link" data-tab="alerts">Alerts & Actions</button>
+                <button class="tab-link" data-tab="faq">FAQs</button>
+            </div>
+
+            <div id="overview" class="tab-content active">
+                <div class="info-section">
+                    <h2>Overview</h2>
+                    <p>Learn about the core architecture and real-time capabilities of SecureWatch.</p>
+
+                    <h3>Real-time Monitoring</h3>
+                    <p>SecureWatch continuously monitors all login attempts to your systems in real-time.</p>
+                    <div class="info-grid">
+                        <div class="card"><h4>Live Feed</h4><p>View all authentication attempts as they happen.</p></div>
+                        <div class="card"><h4>Instant Analysis</h4><p>Immediate risk assessment for each login attempt.</p></div>
+                        <div class="card"><h4>Automated Response</h4><p>Automatic blocking of high-risk attempts.</p></div>
+                    </div>
+
+                    <h3>Geographic Intelligence</h3>
+                    <p>Advanced geolocation analysis to identify suspicious login patterns.</p>
+                    <div class="info-grid">
+                        <div class="card"><h4>Location Tracking</h4><p>Precise geolocation of all login attempts.</p></div>
+                        <div class="card"><h4>Anomaly Detection</h4><p>Identify unusual geographic patterns.</p></div>
+                        <div class="card"><h4>Threat Mapping</h4><p>Visual representation of global threats.</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="dashboard-guide" class="tab-content">
+                 <div class="info-section">
+                    <h2>Dashboard Guide</h2>
+                    <p>A detailed walkthrough of the main dashboard components and features.</p>
+
+                    <h3>System Architecture</h3>
+                    <p>How SecureWatch processes and analyzes security data.</p>
+                    <div class="info-grid">
+                        <div class="card"><h4>Data Collection</h4><p>Gather login attempt data from all connected systems.</p></div>
+                        <div class="card"><h4>Risk Analysis</h4><p>AI-powered assessment of threat levels.</p></div>
+                        <div class="card"><h4>Alert Generation</h4><p>Create contextual alerts for suspicious activity.</p></div>
+                        <div class="card"><h4>Response</h4><p>Automated blocking and manual review options.</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="risk-scoring" class="tab-content">
+                <div class="info-section">
+                    <h2>Risk Scoring</h2>
+                    <p>Understanding how SecureWatch calculates risk scores for login attempts.</p>
+
+                    <h3>Risk Assessment Algorithm</h3>
+                    <div class="info-grid">
+                        <div class="card"><h4>Low Risk (0-39%)</h4><ul><li>• Known IP addresses</li><li>• Regular login times</li><li>• Trusted devices</li></ul></div>
+                        <div class="card"><h4>Medium Risk (40-69%)</h4><ul><li>• New locations</li><li>• Unusual login times</li><li>• VPN/Proxy usage</li></ul></div>
+                        <div class="card"><h4>High Risk (70-100%)</h4><ul><li>• Multiple failed attempts</li><li>• Impossible travel</li><li>• Known threat sources</li></ul></div>
+                    </div>
+
+                    <h3>Risk Factors Explained</h3>
+                    <p>Our AI analyzes over 50 factors. Here are some key indicators of risk:</p>
+                    <div class="info-grid">
+                         <div class="card"><h4>Multiple Failed Attempts</h4><p>Repeated login failures within a short time, indicating potential brute force attacks.</p></div>
+                         <div class="card"><h4>Geolocation Anomaly</h4><p>Login attempts from locations that are geographically impossible given recent activity.</p></div>
+                         <div class="card"><h4>Suspicious IP Range</h4><p>IP addresses from known malicious networks or anonymization services.</p></div>
+                         <div class="card"><h4>New Device Detected</h4><p>Login attempts from previously unseen devices or browsers for the user account.</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="alerts" class="tab-content">
+                 <div class="info-section">
+                    <h2>Alerts & Actions</h2>
+                    <p>Details on different alert types and the recommended actions for each.</p>
+
+                    <h3>Alert Types</h3>
+                     <div class="info-grid">
+                        <div class="card"><h4>Critical Alert</h4><p>High-risk login attempt blocked automatically. Immediate investigation recommended.</p></div>
+                        <div class="card"><h4>Warning Alert</h4><p>Medium-risk activity detected. Manual review suggested.</p></div>
+                        <div class="card"><h4>Info Alert</h4><p>Notable activity that doesn't require immediate action but should be monitored.</p></div>
+                        <div class="card"><h4>System Alert</h4><p>Updates about system status, maintenance, or configuration changes.</p></div>
+                    </div>
+
+                    <h3>Recommended Actions</h3>
+                    <div class="info-grid">
+                         <div class="card"><h4>High-Risk Attempts</h4><p>System automatically blocks. Investigate source IP, check for compromised accounts, and consider IP range blocking.</p></div>
+                         <div class="card"><h4>Medium-Risk Attempts</h4><p>Review attempt details. Contact the user to verify legitimacy and monitor for suspicious patterns.</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="faq" class="tab-content">
+                <div class="info-section">
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-list">
+                        <div class="card">
+                            <h4>How accurate is the risk scoring?</h4>
+                            <p>Our AI-powered risk scoring system has a 95% accuracy rate, continuously improving through machine learning and threat intelligence updates.</p>
+                        </div>
+                        <div class="card">
+                            <h4>What happens when a login is blocked?</h4>
+                            <p>Blocked attempts are logged, the user receives a security notification, and administrators are alerted. Legitimate users can request access through secure channels.</p>
+                        </div>
+                         <div class="card">
+                            <h4>Can I customize the risk thresholds?</h4>
+                            <p>Yes, administrators can adjust risk thresholds, configure custom rules, and set up organization-specific security policies through the settings panel.</p>
+                        </div>
+                         <div class="card">
+                            <h4>How is geographic data collected?</h4>
+                            <p>We use IP geolocation services combined with device fingerprinting to determine login locations while respecting user privacy and data protection regulations.</p>
+                        </div>
+                         <div class="card">
+                            <h4>What integrations are available?</h4>
+                            <p>SecureWatch integrates with major identity providers, SIEM systems, and security tools through REST APIs and webhooks for seamless security operations.</p>
+                        </div>
+                    </div>
+                    
+                    <h3>Need More Help?</h3>
+                    <div class="info-grid">
+                        <div class="card"><h4>Documentation</h4><p>Comprehensive guides and API docs.</p><a href="#" class="btn-outline">View Docs</a></div>
+                        <div class="card"><h4>Support</h4><p>24/7 technical support and assistance.</p><a href="#" class="btn-outline">Contact Support</a></div>
+                        <div class="card"><h4>Community</h4><p>Join our community forum and discussions.</p><a href="#" class="btn-outline">Join Community</a></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <a href="about.html" class="logo">
+                    <i data-lucide="shield-check"></i>
+                    <span>SecureWatch</span>
+                </a>
+                <div class="main-nav">
+                    <a href="about.html">About</a>
+                    <a href="index.html">Login</a>
+                    <a href="admin.html">Dashboard</a>
+                    <a href="info.html">Documentation</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2025 SecureWatch. Advanced security monitoring platform.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="js/script.js"></script>
+
 </body>
 </html>

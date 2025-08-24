@@ -3,87 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard - LIDS</title>
+    <title>Dashboard - SecureWatch</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="dashboard-body">
 
-    <div class="header">
-        <h1>Admin Dashboard</h1>
-        <a href="login.html">Logout</a>
+    <header class="dashboard-header">
+        <div class="header-left">
+            <i data-lucide="menu"></i>
+            <h1>SecureWatch Dashboard</h1>
+        </div>
+        <div class="header-right">
+            <span>8/24/2025, 7:49:36 PM</span>
+            <span class="live-indicator"><i data-lucide="radio-tower"></i> Live</span>
+            <i data-lucide="settings"></i>
+        </div>
+    </header>
+
+    <div class="dashboard-grid">
+        
+        <aside class="sidebar">
+            <div class="sidebar-block">
+                <h2>Real-time Statistics</h2>
+                <div class="stats-grid">
+                    <div class="stat-card"><span>20</span> Total</div>
+                    <div class="stat-card"><span>10</span> Blocked</div>
+                    <div class="stat-card"><span>5</span> Flagged</div>
+                    <div class="stat-card"><span>5</span> Allowed</div>
+                </div>
+            </div>
+            <div class="sidebar-block">
+                <h2>High-Risk Alerts</h2>
+                <div class="alerts-list">
+                    <div class="alert-item">
+                        <i data-lucide="alert-triangle" class="icon-flagged"></i>
+                        <div>
+                            <p class="alert-user">john.doe</p>
+                            <p class="alert-detail">Beijing, China</p>
+                            <p class="alert-detail">Unusual login time</p>
+                        </div>
+                    </div>
+                     <div class="alert-item">
+                        <i data-lucide="alert-triangle" class="icon-flagged"></i>
+                        <div>
+                            <p class="alert-user">testuser</p>
+                            <p class="alert-detail">Beijing, China</p>
+                            <p class="alert-detail">VPN/Proxy detected</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="tabs">
+                <button class="tab-link active" data-tab="live-feed">Live Feed</button>
+                <button class="tab-link" data-tab="geo-map">Geographic Map</button>
+                <button class="tab-link" data-tab="analytics">Analytics</button>
+            </div>
+
+            <div id="live-feed" class="tab-content active">
+                <div class="feed-header">
+                    <h3><i data-lucide="activity"></i> Real-time Login Attempts</h3>
+                    <p>Live monitoring of all authentication attempts</p>
+                </div>
+                <div class="live-feed">
+                    <div class="log-item">
+                        <i data-lucide="x-circle" class="icon-blocked"></i>
+                        <div class="log-details">
+                            <p class="log-user">admin</p>
+                            <p class="log-meta"><i data-lucide="map-pin"></i> Moscow, Russia <i data-lucide="clock"></i> 7:39:37 PM</p>
+                        </div>
+                        <div class="log-status">
+                            <span class="status-tag risk-high">Risk: 93%</span>
+                            <span class="status-tag status-blocked">BLOCKED</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="geo-map" class="tab-content">
+                <div class="feed-header">
+                    <h3><i data-lucide="globe"></i> Geographic Threat Map</h3>
+                    <p>Interactive visualization of login attempts by location</p>
+                </div>
+                <div class="geo-map-container">
+                    <div class="map-placeholder">
+                        <i data-lucide="globe-2" class="map-icon"></i>
+                        <p class="map-title">Interactive World Map</p>
+                        <p class="map-subtitle">Geographic visualization of login attempts with risk-based color coding</p>
+                        <div class="map-dot dot-green" style="top: 20%; left: 30%;"></div>
+                        <div class="map-dot dot-red" style="top: 40%; left: 20%;"></div>
+                        <div class="map-dot dot-yellow" style="top: 35%; left: 50%;"></div>
+                        <div class="map-dot dot-green" style="top: 60%; left: 70%;"></div>
+                        <div class="map-dot dot-green" style="top: 25%; left: 80%;"></div>
+                    </div>
+                    <div class="map-legend">
+                        <span><i class="dot-green"></i> Low Risk (0-39%)</span>
+                        <span><i class="dot-yellow"></i> Medium Risk (40-69%)</span>
+                        <span><i class="dot-red"></i> High Risk (70-100%)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="analytics" class="tab-content">
+                <div class="analytics-grid">
+                    <div class="analytics-card">
+                        <h3><i data-lucide="pie-chart"></i> Risk Distribution</h3>
+                        <ul class="risk-distribution-list">
+                            <li class="risk-item">
+                                <span>High Risk (70-100%)</span>
+                                <div class="risk-bar high"><div style="width: 100%;"></div></div>
+                                <span>10</span>
+                            </li>
+                            <li class="risk-item">
+                                <span>Medium Risk (40-69%)</span>
+                                <div class="risk-bar medium"><div style="width: 50%;"></div></div>
+                                <span>5</span>
+                            </li>
+                            <li class="risk-item">
+                                <span>Low Risk (0-39%)</span>
+                                <div class="risk-bar low"><div style="width: 50%;"></div></div>
+                                <span>5</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="analytics-card">
+                        <h3><i data-lucide="shield-alert"></i> Top Risk Factors</h3>
+                        <ul class="risk-factors-list">
+                            <li class="factor-item"><span>Multiple failed attempts</span><span>17</span></li>
+                            <li class="factor-item"><span>Suspicious IP range</span><span>7</span></li>
+                            <li class="factor-item"><span>Geolocation anomaly</span><span>6</span></li>
+                            <li class="factor-item"><span>VPN/Proxy detected</span><span>24</span></li>
+                            <li class="factor-item"><span>Unusual login time</span><span>12</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </main>
     </div>
 
-    <div class="container">
-        <div class="stats-grid">
-            <div class="stat-card">
-                <h3>Total Logins (Today)</h3>
-                <p class="value">1,428</p>
-            </div>
-            <div class="stat-card">
-                <h3>High-Risk Alerts</h3>
-                <p class="value alerts">17</p>
-            </div>
-            <div class="stat-card">
-                <h3>Safe Logins</h3>
-                <p class="value safe">1,411</p>
-            </div>
-            <div class="stat-card">
-                <h3>Model Accuracy</h3>
-                <p class="value">99.8%</p>
-            </div>
-        </div>
-
-        <h2>Recent Login Attempts</h2>
-        <div class="table-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Timestamp</th>
-                        <th>Username</th>
-                        <th>IP Address</th>
-                        <th>Location</th>
-                        <th>Risk Score</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>22-Aug-2025 16:45:12</td>
-                        <td>admin_user</td>
-                        <td>103.22.45.10</td>
-                        <td>Mumbai, IN</td>
-                        <td><div class="risk-bar"><div class="risk-level" style="width: 5%; background-color: #28a745;">5%</div></div></td>
-                        <td><span class="status allowed">Allowed</span></td>
-                    </tr>
-                    <tr>
-                        <td>22-Aug-2025 16:44:50</td>
-                        <td>rohan_s</td>
-                        <td>203.0.113.19</td>
-                        <td>Kyiv, UA</td>
-                        <td><div class="risk-bar"><div class="risk-level" style="width: 92%; background-color: #dc3545;">92%</div></div></td>
-                        <td><span class="status blocked">Blocked</span></td>
-                    </tr>
-                    <tr>
-                        <td>22-Aug-2025 16:43:05</td>
-                        <td>priya_k</td>
-                        <td>198.51.100.4</td>
-                        <td>Pune, IN</td>
-                        <td><div class="risk-bar"><div class="risk-level" style="width: 65%; background-color: #ffc107;">65%</div></div></td>
-                        <td><span class="status review">Review</span></td>
-                    </tr>
-                    <tr>
-                        <td>22-Aug-2025 16:42:18</td>
-                        <td>test_user1</td>
-                        <td>122.161.90.55</td>
-                        <td>Delhi, IN</td>
-                        <td><div class="risk-bar"><div class="risk-level" style="width: 12%; background-color: #28a745;">12%</div></div></td>
-                        <td><span class="status allowed">Allowed</span></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="js/script.js"></script>
 
 </body>
 </html>
-

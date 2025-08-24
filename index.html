@@ -3,25 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Login - LIDS</title>
+    <title>Login - SecureWatch</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <div class="login-container">
-        <h1>Welcome Back</h1>
-        <p>Login to your secure account</p>
-        <form action="/admin.html" method="get"> <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <button type="submit" class="login-btn">Login</button>
-        </form>
+    <div class="login-wrapper">
+        <div class="login-container">
+            <a href="about.html" class="logo">
+                <i data-lucide="shield-check"></i>
+                <span>SecureWatch</span>
+            </a>
+            <h2>Access your security dashboard</h2>
+            
+            <form class="login-form">
+                <input type="text" placeholder="Username" required>
+                <input type="password" placeholder="Password" required>
+                <a href="admin.html" class="btn">Sign In</a>
+            </form>
+
+            <p class="demo-creds">Demo credentials: admin / admin123</p>
+            <p class="security-notice">
+                Your login attempts are monitored and logged for security purposes. Unauthorized access attempts will be reported.
+            </p>
+            <a href="about.html" class="back-link">&larr; Back to About</a>
+        </div>
     </div>
 
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      lucide.createIcons();
+    </script>
 </body>
 </html>
