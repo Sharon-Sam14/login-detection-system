@@ -1,31 +1,35 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    // Render all Lucide icons
+    // Render all Lucide icons on the page
     lucide.createIcons();
 
-    // --- Tabbed Interface Logic for info.html ---
-    const tabsContainer = document.querySelector(".tabs");
-    const tabLinks = document.querySelectorAll(".tab-link");
-    const tabContents = document.querySelectorAll(".tab-content");
+    // --- Tabbed Interface Logic ---
+    // This code will find any tab component on any page and make it work
+    const tabContainers = document.querySelectorAll(".tabs");
 
-    // Only run tab logic if the tabs container exists on the page
-    if (tabsContainer) {
-        tabsContainer.addEventListener("click", function (e) {
+    tabContainers.forEach(container => {
+        container.addEventListener("click", function (e) {
             const clicked = e.target.closest(".tab-link");
             
             if (!clicked) return;
 
-            // Remove active classes from all tabs and content
+            // Find the main parent container for the tabs and content
+            const mainParent = clicked.closest('.main-content, .info-page');
+            if (!mainParent) return;
+
+            const tabLinks = container.querySelectorAll(".tab-link");
+            const tabContents = mainParent.querySelectorAll(".tab-content");
+
+            // Deactivate all tabs and content within this specific component
             tabLinks.forEach(tab => tab.classList.remove("active"));
             tabContents.forEach(content => content.classList.remove("active"));
 
-            // Activate the clicked tab
+            // Activate the tab that was clicked
             clicked.classList.add("active");
 
-            // Activate the corresponding content
+            // Find and activate the corresponding content
             const tabId = clicked.dataset.tab;
-            document.getElementById(tabId).classList.add("active");
+            mainParent.querySelector("#" + tabId).classList.add("active");
         });
-    }
-
+    });
 });
